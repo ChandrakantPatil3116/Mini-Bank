@@ -360,7 +360,7 @@ app.post("/api/deposit", (req, res) => {
             // Record transaction
             db.query(
                 `
-                INSERT INTO transactions
+                INSERT INTO transaction
                 (user_id, type, amount, description)
                 VALUES (?, 'DEPOSIT', ?, ?)
                 `,
@@ -485,7 +485,7 @@ app.post("/api/withdraw", (req, res) => {
                     // Record transaction
                     db.query(
                         `
-                        INSERT INTO transactions
+                        INSERT INTO transaction
                         (user_id, type, amount, description)
                         VALUES (?, 'WITHDRAW', ?, ?)
                         `,
@@ -688,7 +688,7 @@ app.post("/api/transfer", (req, res) => {
                                     // Sender transaction
                                     db.query(
                                         `
-                                        INSERT INTO transactions
+                                        INSERT INTO transaction
                                         (user_id, type, amount, description)
                                         VALUES (?, 'TRANSFER', ?, ?)
                                         `,
@@ -702,7 +702,7 @@ app.post("/api/transfer", (req, res) => {
                                     // Receiver transaction
                                     db.query(
                                         `
-                                        INSERT INTO transactions
+                                        INSERT INTO transaction
                                         (user_id, type, amount, description)
                                         VALUES (?, 'TRANSFER', ?, ?)
                                         `,
@@ -752,7 +752,7 @@ app.get(
                 amount,
                 description,
                 created_at
-            FROM transactions
+            FROM transaction
             WHERE user_id = ?
             ORDER BY created_at DESC
             `,
