@@ -530,9 +530,9 @@ It does not implement the security, compliance, auditing, encryption, fraud prev
 
 ## 👨‍💻 Author
 
-**SCRAZ MANITY**
+**Chandrakant Patil**
 
-GitHub: `https://github.com/your-username`
+GitHub: `https://github.com/ChandrakantPatil3116`
 
 ---
 
