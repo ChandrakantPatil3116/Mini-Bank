@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MiniBank - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <h2>MiniBank</h2>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+    <!-- User Information -->
+
+    <section class="welcome">
+
+        <h1>
+            Welcome, <span id="name"></span>
+        </h1>
+
+        <p>
+            Account Number:
+            <strong id="account"></strong>
+        </p>
+
+    </section>
+
+
+    <!-- Balance -->
+
+    <section class="balance-card">
+
+        <p>Available Balance</p>
+
+        <h1 id="balance">₹ 0</h1>
+
+    </section>
+
+
+    <!-- Banking Operations -->
+
+    <section class="operations">
+
+        <!-- Deposit -->
+
+        <div class="card">
+
+            <h3>Deposit Money</h3>
+
+            <input
+                type="number"
+                id="depositAmount"
+                placeholder="Enter amount"
+                min="1"
+            >
+
+            <button onclick="deposit()">
+                Deposit
+            </button>
+
+        </div>
+
+
+        <!-- Withdraw -->
+
+        <div class="card">
+
+            <h3>Withdraw Money</h3>
+
+            <input
+                type="number"
+                id="withdrawAmount"
+                placeholder="Enter amount"
+                min="1"
+            >
+
+            <button onclick="withdraw()">
+                Withdraw
+            </button>
+
+        </div>
+
+
+        <!-- Transfer -->
+
+        <div class="card">
+
+            <h3>Transfer Money</h3>
+
+            <input
+                type="text"
+                id="receiverAccount"
+                placeholder="Receiver account number"
+            >
+
+            <input
+                type="number"
+                id="transferAmount"
+                placeholder="Enter amount"
+                min="1"
+            >
+
+            <button onclick="transfer()">
+                Transfer
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Transactions -->
+
+    <section class="transactions card">
+
+        <h2>Transaction History</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="transactionBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
